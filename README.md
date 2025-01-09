@@ -16,10 +16,9 @@ Sculpt is an innovative project that utilizes Generative Adversarial Networks (G
 ---
 
 ## Tech Stack
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Express.js
-- **Database**: MongoDB
-- **Machine Learning Frameworks**: TensorFlow, PyTorch (for GANs)
+- **Frontend**: CSS, JavaScript, NextJS, React\
+- **Backend**: Flask
+- **Machine Learning Frameworks**: TensorFlow
 
 ---
 
