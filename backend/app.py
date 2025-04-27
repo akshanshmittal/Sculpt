@@ -16,13 +16,15 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 
 # Load the sketch-to-color model
-sketch_to_color_model = load_model('C:/STUDY/AI_proj/proj_2/backend/sketch-color/generator_model 150.h5')
+sketch_to_color_model = load_model('C:/Projects/Sculpt/Sculpt/backend/sketch-color/generator_model 150.h5')
 
 # Load the style transfer model
 style_transfer_model = style5.load_model()  # Assuming style5.py has a function load_model()
 
 def preprocess_image(image_data):
     image = Image.open(BytesIO(base64.b64decode(image_data)))
+    # Convert to RGB mode to ensure we have 3 channels (remove alpha if present)
+    image = image.convert('RGB')
     image = image.resize((256, 256))  # Resize to the input size of the model
     image = np.array(image) / 255.0  # Normalize the image
     image = np.expand_dims(image, axis=0)  # Add batch dimension
